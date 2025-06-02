@@ -2,7 +2,7 @@
 
 Welcome to **Markviz** — a lightweight, web-based application for analyzing and visualizing student marks. Built using Flask and powered by `matplotlib`, Markviz turns raw score data into meaningful insights through clear tables and charts.
 
-Developed by a team of two, Markviz is designed to be simple, effective, and educational — ideal for teachers, students, and data enthusiasts alike.
+ Markviz is designed to be simple, effective, and educational — ideal for teachers, students, and data enthusiasts alike.
 
 ---
 
