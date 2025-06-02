@@ -1,128 +1,113 @@
-Markviz: Student Marks Analyzer & Visualizer
-Markviz is a web-based application built with Flask that simplifies the process of analyzing and visualizing student marks. Whether you're a teacher, student, or education enthusiast, Markviz helps you gain instant insights into academic performance through clean analytics and visual reports.
+# Markviz: Student Marks Analyzer & Visualizer
 
-The Markviz Advantage
-Markviz streamlines student marks analysis by allowing users to upload or input data and receive clear performance metrics and charts. Designed with ease of use and functionality in mind, Markviz is suitable for:
+Welcome to **Markviz** — a lightweight, web-based application for analyzing and visualizing student marks. Built using Flask and powered by `matplotlib`, Markviz turns raw score data into meaningful insights through clear tables and charts.
 
-Teachers evaluating class performance
+Developed by a team of two, Markviz is designed to be simple, effective, and educational — ideal for teachers, students, and data enthusiasts alike.
 
-Students reviewing their academic progress
+---
 
-Education professionals conducting research
+## The Markviz Advantage
 
-Developers building educational tools
+While traditional mark management tools require manual calculation or complicated software, Markviz streamlines the process:
 
-Key Features
-CSV and Manual Input
-Upload a .csv file or manually enter student names and marks through the form.
+- Upload a CSV or enter marks manually
+- Instantly generate grade distributions
+- Visualize student performance using charts
 
-Automatic Analysis
-Processes and displays:
+This makes Markviz ideal for:
 
-Class average
+- Teachers preparing class reports
+- Students reviewing academic progress
+- Educational institutions conducting analytics
+- Developers prototyping educational tools
 
-Highest and lowest scores
+---
 
-Grade assignment based on score thresholds
+## Key Features
 
-Visual Insights
-Automatically generates:
+- **CSV & Manual Entry**: Upload `.csv` files or input student names and marks directly via form.
+- **Automated Grading**: Assigns grades based on thresholds (A, B, C, F).
+- **Statistical Summary**: Computes class average, top and bottom scores.
+- **Chart Visualization**: Displays bar charts and pie charts of performance and grade distribution.
+- **Clean UI**: Responsive interface styled using TailwindCSS.
+- **Download & Reset Tools**: Clear results or re-analyze new datasets with ease.
 
-Bar Chart of student marks
+---
 
-Pie Chart of grade distribution
+## How to Use Markviz
 
-Powered by matplotlib, these charts provide immediate visual understanding.
+### Accessing the App
 
-Download and Reset Tools
-Input validation for clean data handling
-
-Options to re-upload or clear datasets
-
-Modern, responsive interface styled with TailwindCSS
-
-How to Use Markviz
-Accessing the App
-Run locally by navigating to:
+Run locally using:
 http://127.0.0.1:5000/
 
-You can also deploy it using your preferred hosting platform.
 
-Interface Overview
-Header
-Application name: Markviz
+Or deploy to your own hosting environment.
 
-Upload or manual entry toggle
+---
 
-Clean, accessible layout
+## Interface Overview
 
-Input Section
-Upload a .csv file or enter student data manually
+### Header
+- App title: Markviz
+- Upload toggle: Switch between CSV and Manual Input
 
-Click Submit to process data
+### Input Section
+- **CSV Upload**: Requires `Name` and `Marks` columns
+- **Manual Input**: Add each student record individually
 
-Output Section
-Table showing student marks and grades
+### Output Section
+- Tabular summary of marks and grades
+- Statistics: Average, Highest, Lowest
+- Charts: Bar chart (marks) and Pie chart (grades)
+- Controls: Clear, Submit, Reset
 
-Summary statistics (average, top, bottom)
+---
 
-Charts for better understanding
+## Grading Logic
 
-Buttons to clear input or start over
+Grades are computed using this scale:
 
-Functionality Details
-Input Methods
-CSV Upload: Requires two columns - Name and Marks
+- **A**: 90 and above  
+- **B**: 75 - 89  
+- **C**: 50 - 74  
+- **F**: Below 50
 
-Manual Form: Add individual student entries one at a time
+---
 
-Grade Logic
-Grades are assigned based on the following criteria:
+## Visualizations
 
-A: 90 and above
+Charts are rendered with `matplotlib`:
 
-B: 75 to 89
+- **Bar Chart**: Compares marks across all students
+- **Pie Chart**: Shows percentage distribution of grades
 
-C: 50 to 74
+These provide immediate insight into student performance trends.
 
-F: Below 50
+---
 
-Chart Generation
-Bar Chart: Student names vs marks
+## Tips for Best Results
 
-Pie Chart: Grade distribution percentages
+- Ensure CSV format is clean and contains two columns: `Name`, `Marks`
+- Avoid empty or malformed entries
+- Use a modern browser for full compatibility
+- Always double-check auto-generated results
 
-Tools and Controls
-Clear: Resets all data and views
+---
 
-Reload: Returns to the input screen for new data
+## Use Cases
 
-User Interface and Design
-Markviz is styled using TailwindCSS for a modern, responsive interface. Features include:
+- Generate class performance reports quickly
+- Track and compare semester-wise progress
+- Automate grading and visualization for small institutions
+- Learn data visualization using educational datasets
 
-Mobile-friendly layout
+---
 
-Minimalist design for clarity
+## Conclusion
 
-Smooth user interactions with rounded edges and spacing
+**Markviz** is more than a marks calculator — it's a smart analysis and visualization tool built for clarity and speed. Whether you're an educator, a student, or a hobbyist, Markviz brings you the insights you need in just a few clicks.
 
-Best Practices
-Ensure your CSV is correctly formatted with "Name" and "Marks" headers
+---
 
-Avoid submitting incomplete data
-
-Use a modern browser for best performance
-
-Always review results before exporting or saving
-
-Use Cases
-Teachers preparing academic reports
-
-Students analyzing personal results
-
-Institutions comparing class performance
-
-Developers or researchers analyzing educational data
-
-Conclusion
-Markviz is more than a marks calculator — it’s an intelligent student performance analyzer. With flexible input, automatic grading, and rich visual feedback, it helps users make informed decisions and understand academic trends at a glance.
+**Happy Analyzing.**
