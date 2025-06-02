@@ -68,10 +68,12 @@ Or deploy to your own hosting environment.
 
 Grades are computed using this scale:
 
-- **A**: 90 and above  
-- **B**: 75 - 89  
-- **C**: 50 - 74  
-- **F**: Below 50
+- **A+**: 90 and above
+- **A**:  75 and above
+- **B**:  60 and above 
+- **C**:  50 and above
+- **D**:  35 and above 
+- **F(Fail)**: Below 35
 
 ---
 
