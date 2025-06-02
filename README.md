@@ -34,18 +34,6 @@ This makes Markviz ideal for:
 
 ---
 
-## How to Use Markviz
-
-### Accessing the App
-
-Run locally using:
-http://127.0.0.1:5000/
-
-
-Or deploy to your own hosting environment.
-
----
-
 ## Interface Overview
 
 ### Header
