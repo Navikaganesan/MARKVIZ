@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.secret_key = 'secret'
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['STATIC_FOLDER'] = 'static'
-app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  
+app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  # 2MB limit
 ALLOWED_EXTENSIONS = {'csv'}
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
@@ -166,8 +166,8 @@ result_html = '''
             <h3 class="text-2xl font-semibold text-gray-800 mb-4">Summary</h3>
             <p class="text-gray-700 mb-2"><strong>Total Students:</strong> {{ students|length }}</p>
             <p class="text-gray-700 mb-2"><strong>Class Average:</strong> {{ average }}</p>
-            <p class="text-gray-700 mb-2"><strong>Topper:</strong> {{ topper.name }} with {{ topper.marks }} marks</p>
-            <p class="text-gray-700"><strong>Lowest Scorer:</strong> {{ lowest.name }} with {{ lowest.marks }} marks</p>
+            <p class="text-gray-700 mb-2"><strong>Topper(s):</strong> {{ topper }}</p>
+            <p class="text-gray-700"><strong>Lowest Scorer(s):</strong> {{ lowest }}</p>
         </div>
 
         <div class="bg-white p-8 rounded-lg shadow-lg mb-10">
@@ -209,7 +209,7 @@ def generate_bar_chart(students):
     names = [student['name'] for student in students]
     marks = [student['marks'] for student in students]
     
-    plt.figure(figsize=(8, 5)) 
+    plt.figure(figsize=(8, 5))  # Adjusted for laptop view
     plt.bar(names, marks, color='indigo')
     plt.xlabel('Students', fontsize=12)
     plt.ylabel('Marks', fontsize=12)
@@ -230,7 +230,7 @@ def generate_pie_chart(students):
     sizes = list(grade_counts.values())
     colors = ['#16a34a', '#3b82f6', '#f59e0b', '#f97316', '#dc2626', '#ef4444']
     
-    plt.figure(figsize=(6, 6))  
+    plt.figure(figsize=(6, 6))  # Adjusted for laptop view
     plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
     plt.title('Grade Distribution', fontsize=14)
     plt.axis('equal')
@@ -314,8 +314,19 @@ def result():
         return redirect('/')
 
     average = round(total_marks / len(student_data), 2)
-    topper = max(student_data, key=lambda x: x['marks'])
-    lowest = min(student_data, key=lambda x: x['marks'])
+    
+    # Find highest and lowest marks
+    marks_list = [student['marks'] for student in student_data]
+    max_marks = max(marks_list) if marks_list else 0
+    min_marks = min(marks_list) if marks_list else 0
+    
+    # Collect all students with highest and lowest marks
+    toppers = [student for student in student_data if student['marks'] == max_marks]
+    lowest_scorers = [student for student in student_data if student['marks'] == min_marks]
+    
+    # Format names and marks for display
+    topper_display = ", ".join([f"{student['name']} ({student['marks']})" for student in toppers])
+    lowest_display = ", ".join([f"{student['name']} ({student['marks']})" for student in lowest_scorers])
 
     bar_chart = generate_bar_chart(student_data)
     pie_chart = generate_pie_chart(student_data)
@@ -324,8 +335,8 @@ def result():
         result_html,
         students=student_data,
         average=average,
-        topper=topper,
-        lowest=lowest,
+        topper=topper_display,
+        lowest=lowest_display,
         bar_chart=bar_chart,
         pie_chart=pie_chart
     )
