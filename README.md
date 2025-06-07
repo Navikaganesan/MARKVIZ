@@ -30,7 +30,7 @@ This makes Markviz ideal for:
 - **Statistical Summary**: Computes class average, top and bottom scores.
 - **Chart Visualization**: Displays bar charts and pie charts of performance and grade distribution.
 - **Clean UI**: Responsive interface styled using TailwindCSS.
-- **Download & Reset Tools**: Clear results or re-analyze new datasets with ease.
+- **Reset Tool**: re-analyze new datasets with ease.
 
 ---
 
@@ -48,7 +48,7 @@ This makes Markviz ideal for:
 - Tabular summary of marks and grades
 - Statistics: Average, Highest, Lowest
 - Charts: Bar chart (marks) and Pie chart (grades)
-- Controls: Clear, Submit, Reset
+- Control:Reset
 
 ---
 
