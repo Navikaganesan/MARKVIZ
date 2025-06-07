@@ -26,7 +26,7 @@ This makes Markviz ideal for:
 ## Key Features
 
 - **CSV & Manual Entry**: Upload `.csv` files or input student names and marks directly via form.
-- **Automated Grading**: Assigns grades based on thresholds (A, B, C, F).
+- **Automated Grading**: Assigns grades based on thresholds (A+, A, B, C, D, F(Fail)).
 - **Statistical Summary**: Computes class average, top and bottom scores.
 - **Chart Visualization**: Displays bar charts and pie charts of performance and grade distribution.
 - **Clean UI**: Responsive interface styled using TailwindCSS.
